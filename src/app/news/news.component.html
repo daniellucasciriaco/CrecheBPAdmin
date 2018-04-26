@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="row default-margin-top">
+    <div class="col-12">
+      <button class="btn btn-info" (click)="goToAddNews()">Adicionar Notícia</button>
+    </div>
+    <app-loading *ngIf="loading"></app-loading>
+    <div class="col-12" *ngIf="!loading">
+      <div class="row default-margin-top">
+        <div class="col-12">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col-1">Foto</th>
+                <th scope="col-3">Título</th>
+                <th scope="col-5">Descrição</th>
+                <th scope="col-2">Excluir</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let newsUnit of news">
+                <td><img src="{{ newsUnit.URLFoto }}" alt="Foto" width="100"></td>
+                <td>{{ newsUnit.Titulo }}</td>
+                <td>{{ newsUnit.Descricao }}</td>
+                <td><button class="btn btn-danger" (click)="deleteNews(newsUnit.$key)">Excluir</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

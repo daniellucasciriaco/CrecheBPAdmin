@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-12 col-lg-6 col-xs-6 col-md-8 col-sm-8">
+      <div class="card login-card">
+        <div class="card-block">
+          <div class="row justify-content-center">
+            <div class="col-12 col-lg-6 col-xs-6 col-md-8 col-sm-8">
+              <img class="card-img-top" src="../../assets/images/logo.png" alt="Creche Bom Pastor" width="100%">
+            </div>
+          </div>
+          <h4 class="card-title text-center login-title">Acesso Restrito</h4>
+          <!-- Form -->
+          <div class="container-fluid row">
+            <div class="col-12">
+              <form (ngSubmit)="onSubmit()" [formGroup]="formulario">
+                <div class="form-group">
+                  <label for="email">Email</label>
+                  <input formControlName="email" type="email" class="form-control" id="email" placeholder="Digite o seu email">
+                </div>
+                <div class="form-group">
+                  <label for="password">Senha</label>
+                  <input formControlName="password" type="password" class="form-control" id="password" placeholder="Digite sua senha">
+                </div>
+                <button type="submit" class="btn btn-primary">Entrar</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

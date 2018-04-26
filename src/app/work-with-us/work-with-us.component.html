@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="row default-margin-top">
+    <app-loading *ngIf="loading"></app-loading>
+    <div class="col-12" *ngIf="!loading">
+    <div class="col-12">
+      <div class="row default-margin-top">
+        <div class="col-12">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col-2">Nome</th>
+                <th scope="col-3">Email</th>
+                <th scope="col-5">Carta de Apresentação</th>
+                <th scope="col-2">Excluir</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let work of workWithUs">
+                <td>{{ work.Nome }}</td>
+                <td>{{ work.Email }}</td>
+                <td>{{ work.CartaApresentacao }}</td>
+                <td><button class="btn btn-danger" (click)="deleteObject(work.$key)">Excluir</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="row default-margin-top justify-content-center">
+    <div class="col-12 col-xs-6 col-lg-6 col-md-8 col-sm-8">
+      <div class="card login-card">
+        <div class="card-block">
+          <h4 class="card-title text-center login-title">Adicionar Colaborador</h4>
+          <!-- Form -->
+          <div class="container-fluid row">
+            <div class="col-12">
+              <form (ngSubmit)="onSubmit()" [formGroup]="formulario">
+                <div class="form-group">
+                  <label for="photo">Foto</label>
+                  <input type="file" accept="image/x-png,image/jpeg" class="form-control" id="photo" (change)="detectFiles($event)">
+                </div>
+                <div class="form-group">
+                  <label for="tipo">Tipo</label>
+                  <select formControlName="tipo" class="form-control" id="tipo">
+                    <option value="D">Doador</option>
+                    <option value="V">Voluntário</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="name">Nome</label>
+                  <input formControlName="name" type="text" class="form-control" id="name" placeholder="Digite o nome do Colaborador">
+                </div>
+                <div class="form-group">
+                  <label for="email">E-mail</label>
+                  <input formControlName="email" type="text" class="form-control" id="email" placeholder="Digite o e-mail do Colaborador">
+                </div>
+                <div class="form-group">
+                  <label for="endereco">Endereço</label>
+                  <input formControlName="endereco" type="text" class="form-control" id="endereco" placeholder="Digite o endereço do Colaborador">
+                </div>
+                <div class="form-group">
+                  <label for="date">Data de Nascimento/Fundação</label>
+                  <input formControlName="date" type="date" class="form-control" id="date" placeholder="Digite a data de Nascimento/Fundação do Colaborador">
+                </div>
+                <button type="submit" class="btn btn-primary" [disabled]="!selectedFiles">Adicionar Colaborador</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

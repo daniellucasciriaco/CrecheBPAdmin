@@ -1,0 +1,46 @@
+<nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand">
+        <img src="../../assets/images/logo.png" alt="Creche Bom Pastor" height="40">
+    </a>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li [class]="getAtive('')">
+                <a class="nav-link" routerLink="">Início
+                </a>
+            </li>
+            <li [class]="getAtive('noticias')">
+                <a class="nav-link" routerLink="/noticias">Notícias</a>
+            </li>
+            <li [class]="getAtive('eventos')">
+                <a class="nav-link" routerLink="/eventos">Eventos</a>
+            </li>
+            <li [class]="getAtive('trabalhe-conosco')">
+                <a class="nav-link" routerLink="/trabalhe-conosco">Trabalhe Conosco</a>
+            </li>
+            <li [class]="getAtive('feedback')">
+                <a class="nav-link" routerLink="/feedback">Mensagens</a>
+            </li>
+            <li [class]="getAtive('colaboradores')">
+                <a class="nav-link" routerLink="/colaboradores">Colaboradores</a>
+            </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+            <button class="btn btn-outline-danger my-2 my-sm-0" (click)="onLogout()">Sair</button>
+        </form>
+    </div>
+</nav>
+
+<app-main *ngIf="route == ''"></app-main>
+<app-news *ngIf="route == 'noticias'"></app-news>
+<app-add-news *ngIf="route == 'adicionar-noticias'"></app-add-news>
+<app-events *ngIf="route == 'eventos'"></app-events>
+<app-add-event *ngIf="route == 'adicionar-evento'"></app-add-event>
+<app-work-with-us *ngIf="route == 'trabalhe-conosco'"></app-work-with-us>
+<app-feedback *ngIf="route == 'feedback'"></app-feedback>
+<app-collaborators *ngIf="route == 'colaboradores'"></app-collaborators>
+<app-add-collaborator *ngIf="route == 'adicionar-colaborador'"></app-add-collaborator>
